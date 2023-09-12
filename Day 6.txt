@@ -1,0 +1,37 @@
+Power of a Number:
+You can use the * operator to calculate the power of a number. For example, a * b means "a raised to the power of b".
+base = 2
+exponent = 3
+result = base ** exponent
+print(f"{base} raised to the power of {exponent} is {result}")
+
+Left and Right Shift:
+Left shift (<<) and right shift (>>) operators are used to shift the bits of a binary number to the left or right by a specified number of positions.
+number = 8  # Binary: 1000
+
+left_shifted = number << 2  # Shift left by 2 positions: 100000
+right_shifted = number >> 2  # Shift right by 2 positions: 10
+
+print("Left Shifted:", left_shifted)
+print("Right Shifted:", right_shifted)
+
+Bitwise AND Operator (&):
+The & operator performs a bitwise AND operation between the individual bits of two numbers.
+a = 5   # Binary: 0101
+b = 3   # Binary: 0011
+
+result = a & b  # Binary AND: 0001 (Decimal: 1)
+print("Bitwise AND Result:", result)
+
+Logical AND Operator (and):
+The and operator is a logical operator that checks if both operands are True. It returns True only if both operands are true.
+
+x = True
+y = False
+
+result = x and y
+print("Logical AND Result:", result)  # Outputs: False
+
+While & is a bitwise operator that operates on individual bits of integers, and is a logical operator that operates on boolean values.
+
+In Python, & is a bitwise operator and and is a logical operator. They serve different purposes and are not interchangeable. Bitwise operators work on the binary representation of numbers, while logical operators work with boolean values.
