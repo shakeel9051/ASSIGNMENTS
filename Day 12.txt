@@ -1,0 +1,86 @@
+Create a module named mymathmodule.py with palindrome, Fibonacci, and factorial functions:
+# mymathmodule.py
+
+def is_palindrome(s):
+    s = s.lower().replace(" ", "")  # Convert to lowercase and remove spaces
+    return s == s[::-1]  # Check if the string is equal to its reverse
+
+def fibonacci(n):
+    if n <= 0:
+        return []
+    elif n == 1:
+        return [0]
+    elif n == 2:
+        return [0, 1]
+    else:
+        fib_sequence = [0, 1]
+        while len(fib_sequence) < n:
+            fib_sequence.append(fib_sequence[-1] + fib_sequence[-2])
+        return fib_sequence
+
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+Create another module to invoke the functions from mymathmodule:
+
+# mainmodule.py
+from mymathmodule import is_palindrome, fibonacci, factorial
+
+# Testing palindrome function
+print(is_palindrome("radar"))
+print(is_palindrome("hello"))
+
+# Testing Fibonacci function
+print(fibonacci(10))
+
+# Testing factorial function
+print(factorial(5))
+
+Create a class that encapsulates palindrome, Fibonacci, and factorial functions:
+# mathclassmodule.py
+
+class MathFunctions:
+    @staticmethod
+    def is_palindrome(s):
+        s = s.lower().replace(" ", "")
+        return s == s[::-1]
+
+    @staticmethod
+    def fibonacci(n):
+        if n <= 0:
+            return []
+        elif n == 1:
+            return [0]
+        elif n == 2:
+            return [0, 1]
+        else:
+            fib_sequence = [0, 1]
+            while len(fib_sequence) < n:
+                fib_sequence.append(fib_sequence[-1] + fib_sequence[-2])
+            return fib_sequence
+
+    @staticmethod
+    def factorial(n):
+        if n == 0 or n == 1:
+            return 1
+        else:
+            return n * MathFunctions.factorial(n - 1)
+
+Using the class to invoke the functions:
+# mainclassmodule.py
+from mathclassmodule import MathFunctions
+
+math_functions = MathFunctions()
+
+# Testing palindrome function
+print(math_functions.is_palindrome("radar"))
+print(math_functions.is_palindrome("hello"))
+
+# Testing Fibonacci function
+print(math_functions.fibonacci(10))
+
+# Testing factorial function
+print(math_functions.factorial(5))
