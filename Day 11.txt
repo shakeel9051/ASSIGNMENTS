@@ -1,0 +1,66 @@
+Generator Function to Replicate range():
+def custom_range(start, stop, step=1):
+    current = start
+    while current < stop:
+        yield current
+        current += step
+
+for num in custom_range(2, 10, 2):
+    print(num)
+
+Recursive Function to Replicate range():
+def custom_recursive_range(start, stop, step=1):
+    if start >= stop:
+        return []
+    else:
+        return [start] + custom_recursive_range(start + step, stop, step)
+
+for num in custom_recursive_range(2, 10, 2):
+    print(num)
+
+Recursive and Lambda Function for Greatest Common Divisor (GCD):
+
+gcd_recursive = lambda a, b: a if not b else gcd_recursive(b, a % b)
+
+# Example usage
+print(gcd_recursive(48, 18))
+
+Creating a module using an Editor / IDE:
+To create a module, you'll need to follow these steps:
+
+Step 1: Open your favorite code editor or integrated development environment (IDE).
+
+Step 2: Create a new Python file with a .py extension. Let's call it mymodule.py.
+
+Step 3: Write the functions you want to include in your module in the mymodule.py file. For example:
+
+# mymodule.py
+
+def my_range(start, stop, step=1):
+    current = start
+    while current < stop:
+        yield current
+        current += step
+
+def recursive_range(start, stop, step=1):
+    if start >= stop:
+        return []
+    else:
+        return [start] + recursive_range(start + step, stop, step)
+
+def gcd_recursive(a, b):
+    return a if not b else gcd_recursive(b, a % b)
+
+Step 4: Save the mymodule.py file in a directory where you'll keep your modules or projects.
+
+Step 5: Now you can use this module in other Python scripts by importing it:
+
+from mymodule import my_range, recursive_range, gcd_recursive
+
+for num in my_range(1, 10, 2):
+    print(num)
+
+numbers = recursive_range(1, 10, 2)
+print(numbers)
+
+print(gcd_recursive(48, 18))
